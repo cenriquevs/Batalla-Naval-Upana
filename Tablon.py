@@ -13,7 +13,7 @@ Un tablero es una cuadrícula estándar de 10 * 10 donde cada
 cuadrado puede tener un estado
 'neutral', 'hit', 'miss' o 'ship'.
 """
-class Board:
+class Tablon:
 
     '''
     Cree un objeto Board y establezca cada posición en el Tablero en NEUTRAL.

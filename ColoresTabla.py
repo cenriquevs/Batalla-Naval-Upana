@@ -1,6 +1,6 @@
 import pygame, sys
 from pygame.locals import *
-import Board
+import Tablon
 
 #Colours
 WHITE=(255,255,255)
@@ -24,9 +24,9 @@ class Rectangle:
 Un VisibleBoard es una cuadrícula estándar de 10 * 10 Rectángulos(rectangles) donde el estado de
 cada rectángulo(rectanle) tiene un color (por ejemplo, rojo para acertar y azul para fallar).
 '''
-class VisibleBoard(Board.Board):
+class VisibleBoard(Tablon.Tablon):
     def __init__(self, startx, starty, display):
-        Board.Board.__init__(self)
+        Tablon.Tablon.__init__(self)
         self.rectangles = [[],[],[],[],[],[],[],[],[],[]]
 
         for i in range(10):
@@ -44,7 +44,7 @@ class VisibleBoard(Board.Board):
 
         if (move_return, ans) == (None, []):
             return ans
-        elif (move_return, ans) == (Board.MISS, []):
+        elif (move_return, ans) == (Tablon.MISS, []):
                 self.miss(x, y)
                 return ans
         else:

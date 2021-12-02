@@ -3,7 +3,7 @@ from pygame import transform
 from iaDelRival import*
 from  ColoresTabla import*
 from PersonPlayer import*
-from Stats import*
+from Estadisticas import*
 import time
 import random
 
@@ -343,7 +343,7 @@ if __name__ == '__main__':
             start.guesses += 1
             start.turns = 1
             
-    stats = Stats()
+    stats = Estadísticas()
     auto = AutomaticPlayer()
     person = PersonPlayer()
     main()
@@ -354,9 +354,6 @@ if __name__ == '__main__':
     DISPLAY=pygame.display
     main_board = DISPLAY.set_mode((HEIGHT, WIDTH),0,32)
 #escenario 2-----------*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
-
-
     scrren.blit(bg2,[0,0])
     DISPLAY.set_caption("Batalla Naval Upana")
     user_board = VisibleUserBoard(main_board)
@@ -444,8 +441,8 @@ if __name__ == '__main__':
                         start.turns = 0
 
                    # if win == 1:
-                   #     main()
-
+                       
+                    
 
                     if (win == 0):
                         '''#MI PANA FACHERITOOOO, PARA DIBUJAR UNA FIGURA

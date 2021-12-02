@@ -1,11 +1,12 @@
 from pygame import *
 import sys
 import pygame
+from pygame.locals import*
 
 init()
 pantalla = display.set_mode((1000,500))
-fondo = image.load("img/creditos.jpg")
-fondo = transform.scale(fondo,(1000,500))
+pestañol = image.load("img/creditos.jpg")
+pestañol = transform.scale(pestañol,(1000,500))
 
 #Fuentes de letra
 font2 = pygame.font.SysFont(""'Georgia'"",25)
@@ -48,7 +49,7 @@ while True:
     pantalla.fill((255,255,255))
     for e in event.get():
         if e.type == QUIT: sys.exit()
-    pantalla.blit(fondo,(0,0))
+    pantalla.blit(pestañol,(0,0))
     #titulos
     pantalla.blit(txt1, (75, 110))
     pantalla.blit(txt2, (675, 150))
