@@ -1,7 +1,7 @@
 import pygame
 from pygame import transform
-from AutomaticPlayer import*
-from VisibleBoard import*
+from iaDelRival import*
+from  ColoresTabla import*
 from PersonPlayer import*
 from Stats import*
 import time
@@ -339,7 +339,7 @@ if __name__ == '__main__':
             if no_go != None and no_go != []:
                 start.player1_score = start.player1_score + 1
             pygame.mixer.Channel(1).play(pygame.mixer.Sound('audios/tiro.wav'))
-            pygame.mixer.music.set_volume(0.10)#Aquí audio de vamooos sigue perro.
+            pygame.mixer.Channel(1).set_volume(0.10)
             start.guesses += 1
             start.turns = 1
             
@@ -403,7 +403,7 @@ if __name__ == '__main__':
                             main_board.blit(main_title, (250, 250))
                             time.sleep(0.9)
                             pygame.mixer.Channel(1).play(pygame.mixer.Sound('audios/ganaste.wav'))
-                            pygame.mixer.music.set_volume(0.1)
+                            pygame.mixer.Channel(1).set_volume(1.1)
                             start.display_score()
                             start.display_stats()
                             win = 1
@@ -433,7 +433,7 @@ if __name__ == '__main__':
                             main_board.blit(main_title, (250, 250))
                             time.sleep(0.9)
                             pygame.mixer.Channel(1).play(pygame.mixer.Sound('audios/perdiste.wav'))
-                            pygame.mixer.music.set_volume(0.1)
+                            pygame.mixer.Channel(1).set_volume(1.1)
                             start.display_score()
                             start.display_stats()
                             win = 1
@@ -442,6 +442,10 @@ if __name__ == '__main__':
                             pygame.Rect(937, 316, 29, 25))
                         
                         start.turns = 0
+
+                   # if win == 1:
+                   #     main()
+
 
                     if (win == 0):
                         '''#MI PANA FACHERITOOOO, PARA DIBUJAR UNA FIGURA
