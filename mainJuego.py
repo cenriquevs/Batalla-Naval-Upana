@@ -2,7 +2,7 @@ import pygame
 from pygame import transform
 from iaDelRival import*
 from  ColoresTabla import*
-from PersonPlayer import*
+from PersonalidadXD import*
 from Estadisticas import*
 import time
 import random
@@ -14,6 +14,9 @@ bg = pygame.image.load("img/fondop.jpg")
 bg = transform.scale(bg,(1000,500))
 bg2 = pygame.image.load("img/pixel.png")
 bg2 = transform.scale(bg2,(1000,500))
+
+icono=pygame.image.load("img/icono.png")
+pygame.display.set_icon(icono)
 
 FPS = 30
 HEIGHT = 1000
@@ -54,7 +57,7 @@ class Start(pygame.sprite.Sprite):
 
         logo = pygame.image.load("img/Battleship.png")
         logo = transform.scale(logo,[450, 70]) 
-        scrren.blit(logo,[200, 15]) 
+        scrren.blit(logo,[500, 15]) 
 
         super(Start, self).__init__()
         self.auto = auto
@@ -228,8 +231,8 @@ class Begin:
         #AJUSTAMOS MARGENES
         logo = transform.scale(logo,[450, 100]) 
         instruc = transform.scale(instruc,[230, 80]) 
-        scrren.blit(logo,[370, 20]) 
-        scrren.blit(instruc,[100,120])
+        scrren.blit(logo,[270, 20]) 
+        scrren.blit(instruc,[100,160])
 
         self.player_board.blit(main_title, (450, 20))
         txt1 = font.render("1. Elige la posición del barco", True, (0,0,0))
@@ -238,11 +241,11 @@ class Begin:
         txt4 = font.render("   tecla para selecionarlo)", True, (0,0,0))
         txt5 = font.render("2. Presiona enter para iniciar ", True, (0,0,0))
 
-        self.player_board.blit(txt1, (20, 220))
-        self.player_board.blit(txt2, (25, 237))
-        self.player_board.blit(txt3, (25, 256))
-        self.player_board.blit(txt4, (25, 278))
-        self.player_board.blit(txt5, (20, 320))
+        self.player_board.blit(txt1, (20, 230))
+        self.player_board.blit(txt2, (25, 247))
+        self.player_board.blit(txt3, (25, 266))
+        self.player_board.blit(txt4, (25, 288))
+        self.player_board.blit(txt5, (20, 330))
         font = pygame.font.SysFont("couriernew", 17)
         mess_1 = "Barcos requeridos"
         font.set_bold(True)
@@ -263,15 +266,13 @@ class Begin:
         human_player.viewable_move(coord_x, coord_y)
 
 #PRIMER ESCENARIO
-
-
 def main():      
     pygame.init() 
     DISPLAY=pygame.display.set_mode((1000,500),0,32)
     scrren.blit(bg,[0,0])
     pygame.display.set_caption("Batalla naval Upana")
     user_board = VisibleUserBoard(DISPLAY)
-    person = PersonPlayer()
+    person = PersonalidadXD()
 
     begin = Begin(DISPLAY, user_board, person)
     begin.display_info()
@@ -345,7 +346,7 @@ if __name__ == '__main__':
             
     stats = Estadísticas()
     auto = AutomaticPlayer()
-    person = PersonPlayer()
+    person = PersonalidadXD()
     main()
     
     pygame.init()
@@ -438,11 +439,7 @@ if __name__ == '__main__':
                         pygame.draw.rect(start.vboard,BLACK,
                             pygame.Rect(937, 316, 29, 25))
                         
-                        start.turns = 0
-
-                   # if win == 1:
-                       
-                    
+                        start.turns = 0      
 
                     if (win == 0):
                         '''#MI PANA FACHERITOOOO, PARA DIBUJAR UNA FIGURA

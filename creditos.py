@@ -8,6 +8,10 @@ pantalla = display.set_mode((1000,500))
 pestañol = image.load("img/creditos.jpg")
 pestañol = transform.scale(pestañol,(1000,500))
 
+#Musicon Perez
+pygame.mixer.music.load('audios/output.wav')
+pygame.mixer.music.play()
+
 #Fuentes de letra
 font2 = pygame.font.SysFont(""'Georgia'"",25)
 font = pygame.font.SysFont(""'System'"", 35)
@@ -38,11 +42,11 @@ skin_anita = transform.scale(skin_anita,(90,90))
 skin_kendy = image.load('img/skin_kendy.jpg')
 skin_kendy = transform.scale(skin_kendy,(90,90))
 
+icono=pygame.image.load("img/icono.png")
+pygame.display.set_icon(icono)
 
 def setTitle(title):
     pygame.display.set_caption(title)
-
-
 setTitle("Creditos")
 
 while True:
@@ -68,3 +72,4 @@ while True:
     pantalla.blit(skin_kendy,(560,330))
     display.flip()
 
+#Derechos reservados por: @Cevs

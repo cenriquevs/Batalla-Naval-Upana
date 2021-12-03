@@ -1,6 +1,6 @@
 from Player import Player
 
-class PersonPlayer(Player):
+class PersonalidadXD(Player):
     """ PersonPlayer representa al ser humano contra el que jugará ComputerPlayer.
     """
 
