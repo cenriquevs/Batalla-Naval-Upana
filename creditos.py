@@ -4,7 +4,7 @@ import pygame
 from pygame.locals import*
 
 init()
-pantalla = display.set_mode((1000,500))
+pantalla = display.set_mode((500,500))
 pestañol = image.load("img/creditos.jpg")
 pestañol = transform.scale(pestañol,(1000,500))
 
